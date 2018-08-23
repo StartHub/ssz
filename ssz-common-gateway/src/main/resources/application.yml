@@ -1,0 +1,19 @@
+server:
+  port: 8081  #端口号
+
+spring:
+  application:
+    name: zuul-service  #服务注册中心测试名
+
+zuul:
+  routes:
+    api-user:
+      path: /user/**
+      serviceId: user-service  #如果是/ribbon/**路径下的请求，则跳转到service-ribbon
+    api-crowd:
+      path: /crowd/**
+      serviceId: crowd-service  #如果是/ribbon/**路径下的请求，则跳转到service-ribbon
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/  #服务注册中心

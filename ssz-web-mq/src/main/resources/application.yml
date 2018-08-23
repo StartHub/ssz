@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mq-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: zoro
+    password: zoro
+server:
+  port: 8088
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/

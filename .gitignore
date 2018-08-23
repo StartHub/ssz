@@ -1,0 +1,20 @@
+### IntelliJ IDEA ###
+/.idea/
+*.iws
+*/*.iml
+*.iml
+*.ipr
+### project ###
+/ssz-service-api/ssz-crowd-api/target/
+/ssz-web-crowd/target/
+/ssz-common/target/
+*/target/
+*.class
+*.lst
+/ssz-common-redis/target/
+/ssz-common-service/target/
+/ssz-eureka-server/target/
+/ssz-service-api/ssz-common-api/target/
+/ssz-service-api/ssz-mq-api/target/
+/ssz-service-api/ssz-mq-model/target/
+/ssz-service-api/ssz-user-api/target/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jusfoun.ssz.crowd.api.dao.ZbDiscussMapper">
+  <resultMap id="BaseResultMap" type="com.jusfoun.ssz.crowd.api.entity.ZbDiscuss">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="contact_id" jdbcType="BIGINT" property="contactId" />
+    <result column="type" jdbcType="SMALLINT" property="type" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, contact_id, type, desc, add_time
+  </sql>
+
+</mapper>

@@ -1,0 +1,62 @@
+server:
+  # 端口
+  port: 8085
+
+spring:
+  application:
+    name: crowd-service
+  data:
+    mongodb:
+      uri:  mongodb://192.168.15.203:27017/jusfoun_ssz
+  datasource:
+    name: service-user
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.15.203:3306/jusfoun_ssz
+    username: root
+    password: password
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 连接池最大使用连接数
+      max-active: 20
+      # 初始化连接大小
+      initial-size: 1
+      # 获取连接最大等待时间
+      max-wait: 60000
+      # 连接池最小空闲
+      min-idle: 3
+      # 自动清除无用连接
+      remove-abandoned: true
+      # 清除无用连接的等待时间
+      remove-abandoned-timeout: 180
+      # 连接属性
+      connection-properties: clientEncoding=UTF-8
+  redis:
+    clusterNodes: 192.168.15.203:7000,192.168.15.203:7001,192.168.15.203:7002
+    password: bdgstore
+    commandTimeout: 5000
+    soTimeout: 3000
+    maxRedirections: 5
+    pool:
+      maxIdle: 8
+      minIdle: 0
+      maxTotal: 8
+      maxWaitMillis: -1
+mybatis:
+  resources: classpath:mapper/*Mapper.xml
+  entity: com.jusfoun.ssz.crowd.api.entity
+swagger:
+  path: com.jusfoun.ssz.web.crowd.controller
+  title: 众包接口文档
+  description: 有问题请百度 http://www.baidu.com
+  contact: DengXu
+  version: 1.0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka/
+# 日志
+logging:
+  level:
+    com.jusfoun.ssz.crowd.api.dao: DEBUG
+

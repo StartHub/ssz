@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jusfoun.ssz.crowd.api.dao.ZbAccountMapper" >
+  <resultMap id="BaseResultMap" type="com.jusfoun.ssz.crowd.api.entity.ZbAccount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="money" property="money" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, money, update_time, add_time
+  </sql>
+
+  <update id="updateById" parameterType="java.util.Map">
+
+    UPDATE zb_account SET money = money - #{money} WHERE id = #{id}
+
+  </update>
+
+</mapper>
